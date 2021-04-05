@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="text" id="message-input">
+    <button id="message-submit" onclick="submit();">Send</button>
+    <label></label>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBLeYa7UZX7-Uh41dr_8z6nMk-IdKVIMYs",
+            authDomain: "project-94-1ed3c.firebaseapp.com",
+            databaseURL: "https://project-94-1ed3c-default-rtdb.firebaseio.com",
+            projectId: "project-94-1ed3c",
+            storageBucket: "project-94-1ed3c.appspot.com",
+            messagingSenderId: "622940617192",
+            appId: "1:622940617192:web:49ae68aab0f90356b38c5d",
+            measurementId: "G-LYR603ZTH8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script>
+        function submit() {
+            firebase.database().ref(room_name).push({
+                name: user_name,
+                message: msg,
+                like: 0
+            });
+        }
+    </script>
+</body>
+
+</html>
